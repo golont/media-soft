@@ -1,0 +1,14 @@
+.link {
+    color: $neutral-regular;
+    font-size: rem(18);
+    text-decoration: none;
+}
+
+.input {
+    font-size: rem(18);
+    background: $backgroundColor;
+    border: 1px solid $borderColor;
+    &-search {
+
+    }
+}
