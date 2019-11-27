@@ -5,7 +5,7 @@ import reducer from "./../reducers/reducer";
 
 const sagaMiddleware = createSagaMiddleware();
 const initialState = {
-    loading: true,
+    loading: false,
     error: false,
     cities: []
 };

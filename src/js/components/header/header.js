@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
 import Burger from "./hamburger";
+import Link from "./../link";
 
 const Header = () => {
     const [links, setLinks] = useState(null);
@@ -16,19 +16,19 @@ const Header = () => {
                         placeholder="Search for a city"
                     />
                 </div>
-                <div className="header__logo">
+                <Link className="header__logo" href="/">
                     <img src="assets/img/teleport.svg" alt="Teleport logo" />
-                </div>
+                </Link>
                 <div className="header__links" ref={links => setLinks(links)}>
-                    <NavLink className="link header__links-item" to="/list">
-                        list
-                    </NavLink>
-                    <NavLink className="link header__links-item" to="/list?search=1">
-                        list with search
-                    </NavLink>
-                    <NavLink className="link header__links-item" to="/search/2">
-                        search
-                    </NavLink>
+                    <Link className="header__links-item" href="/list">
+                        Cities
+                    </Link>
+                    <Link className="header__links-item" href="/search/2">
+                        Search
+                    </Link>
+                    <Link className="header__links-item" href="https://github.com/golont/media-soft" outside={true} target="_blank">
+                        GitHub
+                    </Link>
                 </div>
             </div>
             <Burger

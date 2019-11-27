@@ -2,6 +2,10 @@
     color: $neutral-regular;
     font-size: rem(18);
     text-decoration: none;
+    transition: 0.3s all;
+    &:hover {
+        color: $activeColor;
+    }
 }
 
 .input {
@@ -9,6 +13,19 @@
     background: $backgroundColor;
     border: 1px solid $borderColor;
     &-search {
+    }
+}
 
+.message {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    &-error {
+        color: $errorColor;
+        font-size: rem(32);
     }
 }

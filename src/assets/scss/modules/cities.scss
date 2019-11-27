@@ -1,0 +1,11 @@
+.cities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &-item {
+        display: flex;
+        width: 150px;
+        justify-content: center;
+    }
+}
