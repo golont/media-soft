@@ -20,3 +20,27 @@ export const fetchCitiesFailure = payload => {
         payload
     };
 };
+
+export const FETCH_CITY_REQUEST = "FETCH_CITY_REQUEST";
+export const fetchCityRequest = (id) => {
+    return {
+        type: FETCH_CITY_REQUEST,
+        id
+    };
+};
+
+export const FETCH_CITY_SUCCESS = "FETCH_CITY_SUCCESS";
+export const fetchCitySuccess = payload => {
+    return {
+        type: FETCH_CITY_SUCCESS,
+        payload
+    };
+};
+
+export const FETCH_CITY_FAILURE = "FETCH_CITY_FAILURE";
+export const fetchCityFailure = payload => {
+    return {
+        type: FETCH_CITY_FAILURE,
+        payload
+    };
+};

@@ -1,6 +1,8 @@
 import * as Actions from "Actions/actions";
+import { currentCity } from "./current-city";
 
-const reducer = (state, { type, payload }) => {
+const reducer = (state, action) => {
+    const { type, payload } = action;
     switch (type) {
         case Actions.FETCH_CITIES_REQUEST:
             return {
@@ -24,7 +26,7 @@ const reducer = (state, { type, payload }) => {
                 errorMessage: payload
             };
         default:
-            return state;
+            return { ...state, currentCity: currentCity(state.currentCity, action) };
     }
 };
 

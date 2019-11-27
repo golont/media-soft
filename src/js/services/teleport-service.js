@@ -8,10 +8,15 @@ class TeleportService {
         return body.data._embedded["city:search-results"].map(this.__transformCity);
     };
 
+    getCity = async id => {
+        const body = await axios.get(`${this.__apiBase}/cities/geonameid:${id}`);
+        return body.data;
+    };
+
     __transformCity = ({ matching_full_name, _links }) => {
         const { href } = _links["city:item"];
         return {
-            _id: +href.match(/(?<=geonameid:)[\d]+/)[0],
+            _id: +href.match(/geonameid:[\d]+/)[0].match(/[\d]+/)[0],
             name: matching_full_name.split(",")[0],
             full_name: matching_full_name
         };

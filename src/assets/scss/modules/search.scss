@@ -2,9 +2,9 @@
     display: flex;
     position: relative;
     width: 250px;
-    
+
     label {
-        width: 100%;
+        position: relative;
     }
 
     &__ico {
@@ -29,5 +29,11 @@
             border-radius: 2px;
             padding: 4px;
         }
+    }
+}
+
+@media screen and (max-width: $tableWidth) {
+    .search {
+        margin: 0  auto;
     }
 }

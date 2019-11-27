@@ -57,7 +57,7 @@ section,
 }
 
 .container {
-    padding-top: 70px;
+    padding-top: 90px;
     width: 100%;
     flex: 0 0 auto;
     position: relative;
@@ -89,4 +89,5 @@ section,
 @import "modules/loader";
 @import "modules/cities";
 @import "modules/search";
+@import "modules/city";
 
