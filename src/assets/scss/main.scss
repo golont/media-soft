@@ -40,6 +40,8 @@ section,
 .section {
     position: relative;
     padding: 40px 0;
+    display: flex;
+    justify-content: center;
 
     @media screen and (max-width: $desktopWidth) {
         padding: 36px 0;
