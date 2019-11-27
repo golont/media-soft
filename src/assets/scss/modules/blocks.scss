@@ -13,6 +13,13 @@
     background: $backgroundColor;
     border: 1px solid $borderColor;
     &-search {
+        border-radius: 3px;
+        padding: 7px 0 7px 30px;
+        width: 100%;
+    }
+
+    &:focus, :active {
+        outline-color: $activeColor;
     }
 }
 

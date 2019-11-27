@@ -1,36 +1,40 @@
 import React from "react";
+import classname from "classnames";
 import PropTypes from "prop-types";
 import Link from "./link";
 
-const City = ({ name, _id }) => {
+const City = ({ name, full_name, _id, fullName, className }) => {
     return (
-        <Link className="cities-item" href={`/search/${_id}`} key={_id}>
-            {name}
+        <Link className={className} href={`/search/${_id}`} key={_id}>
+            {fullName ? full_name : name}
         </Link>
     );
 };
 
-const Cities = ({ cities }) => {
+const Cities = ({ cities, fullName, wrapperClass, itemClass }) => {
     return (
-        <div className="cities">
+        <div className={wrapperClass}>
             {cities.map(city => (
-                <City key={city._id} {...city} />
+                <City key={city._id} {...city} className={itemClass} fullName={fullName} />
             ))}
         </div>
     );
 };
 
 Cities.defaultProps = {
-    cities: []
+    cities: [],
+    fullName: false
 };
 
 Cities.propTypes = {
     cities: PropTypes.arrayOf(
         PropTypes.shape({
             _id: PropTypes.number,
-            name: PropTypes.string
+            name: PropTypes.string,
+            full_name: PropTypes.string
         })
-    )
+    ),
+    fullName: PropTypes.bool
 };
 
 export default Cities;

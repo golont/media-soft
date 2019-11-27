@@ -26,7 +26,7 @@ const HomeContainer = () => {
             </div>
         );
     }
-    return <List cities={cities} />;
+    return <List cities={cities} wrapperClass="cities" itemClass="cities-item" />;
 };
 
 export default HomeContainer;
