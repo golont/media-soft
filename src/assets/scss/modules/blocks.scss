@@ -39,3 +39,28 @@
         font-size: rem(32);
     }
 }
+
+.button {
+    display: block;
+    background: none;
+    border: 1px solid $borderColor;
+    padding: 5px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover {
+        border: 1px solid $activeColor;
+    }
+
+    &-failure {
+        margin-right: 20px;
+    }
+
+    &-failure:hover {
+        border: 1px solid $errorColor;
+    }
+
+    &-success:hover {
+        border: 1px solid $successColor;
+    }
+}

@@ -1,7 +1,19 @@
 .city {
+    &__header {
+        display: flex;
+        justify-content: flex-end;
+    }
+
     &__field {
         &-title {
             font-size: 36px;
         }
+        margin-top: 10px;
+    }
+
+    &__map {
+        margin-top: 20px;
+        width: 100%;
+        height: 250px;
     }
 }

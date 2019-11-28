@@ -17,7 +17,7 @@ module.exports = {
         alias: {
             Assets: `${PATHS.src}/assets/`,
             Js: `${PATHS.src}/js/`,
-            Components: `${PATHS.src}/ts/components/`,
+            Components: `${PATHS.src}/js/components/`,
             Redux: `${PATHS.src}/js/redux/`,
             Sagas: `${PATHS.src}/js/redux/sagas/`,
             Actions: `${PATHS.src}/js/redux/actions/`,

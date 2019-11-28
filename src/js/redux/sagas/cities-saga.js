@@ -15,7 +15,7 @@ export function* citiesWatcher() {
     yield takeLatest(Actions.FETCH_CITIES_REQUEST, fetchCitiesSaga);
 }
 
-export function* fetchCitySaga({id}) {
+export function* fetchCitySaga({ id }) {
     try {
         const city = yield call(service.getCity, id);
         yield put(Actions.fetchCitySuccess(city));

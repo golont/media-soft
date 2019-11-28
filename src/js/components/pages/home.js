@@ -9,8 +9,8 @@ const HomeContainer = () => {
     useEffect(() => {
         dispatch(fetchCitiesRequest());
     }, []);
-
     const { cities, loading, error } = useSelector(state => state);
+
     if (error) {
         return (
             <div className="message message-error">
@@ -26,7 +26,10 @@ const HomeContainer = () => {
             </div>
         );
     }
-    return <List cities={cities} wrapperClass="cities" itemClass="cities-item" />;
+
+    return (
+        <List cities={cities} wrapperClass="cities" itemClass="cities-item" />
+    );
 };
 
 export default HomeContainer;

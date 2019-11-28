@@ -8,13 +8,17 @@ const initialState = {
     loading: false,
     error: false,
     cities: [],
-    currentCity:  {
-        loading: true, 
+    currentCity: {
+        loading: true,
         error: false
     }
 };
 
-const store = createStore(reducer, initialState, applyMiddleware(sagaMiddleware));
+const store = createStore(
+    reducer,
+    initialState,
+    applyMiddleware(sagaMiddleware)
+);
 
 sagaMiddleware.run(citiesWatcher);
 sagaMiddleware.run(cityWatcher);

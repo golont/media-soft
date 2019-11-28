@@ -26,7 +26,10 @@ const reducer = (state, action) => {
                 errorMessage: payload
             };
         default:
-            return { ...state, currentCity: currentCity(state.currentCity, action) };
+            return {
+                ...state,
+                currentCity: currentCity(state.currentCity, action)
+            };
     }
 };
 

@@ -1,5 +1,4 @@
 import React from "react";
-import classname from "classnames";
 import PropTypes from "prop-types";
 import Link from "./link";
 
@@ -15,7 +14,12 @@ const Cities = ({ cities, fullName, wrapperClass, itemClass }) => {
     return (
         <div className={wrapperClass}>
             {cities.map(city => (
-                <City key={city._id} {...city} className={itemClass} fullName={fullName} />
+                <City
+                    key={city._id}
+                    {...city}
+                    className={itemClass}
+                    fullName={fullName}
+                />
             ))}
         </div>
     );

@@ -22,7 +22,7 @@ export const fetchCitiesFailure = payload => {
 };
 
 export const FETCH_CITY_REQUEST = "FETCH_CITY_REQUEST";
-export const fetchCityRequest = (id) => {
+export const fetchCityRequest = id => {
     return {
         type: FETCH_CITY_REQUEST,
         id
@@ -41,6 +41,14 @@ export const FETCH_CITY_FAILURE = "FETCH_CITY_FAILURE";
 export const fetchCityFailure = payload => {
     return {
         type: FETCH_CITY_FAILURE,
+        payload
+    };
+};
+
+export const SAVE_CITY = "SAVE_CITY";
+export const saveCity = payload => {
+    return {
+        type: "SAVE_CITY",
         payload
     };
 };

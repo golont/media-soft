@@ -10,8 +10,8 @@ const SearchPage = () => {
     useEffect(() => {
         dispatch(fetchCitiesRequest());
     }, []);
-
     const { cities, loading, error } = useSelector(state => state);
+
     if (error) {
         return (
             <div className="message message-error">
