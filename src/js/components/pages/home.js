@@ -9,7 +9,9 @@ const HomeContainer = () => {
     useEffect(() => {
         dispatch(fetchCitiesRequest());
     }, []);
-    const { cities, loading, error } = useSelector(state => state);
+    const { items: cities, loading, error } = useSelector(
+        state => state.cities
+    );
 
     if (error) {
         return (

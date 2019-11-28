@@ -10,7 +10,9 @@ const SearchPage = () => {
     useEffect(() => {
         dispatch(fetchCitiesRequest());
     }, []);
-    const { cities, loading, error } = useSelector(state => state);
+    const { items: cities, loading, error } = useSelector(
+        state => state.cities
+    );
 
     if (error) {
         return (
@@ -33,7 +35,11 @@ const SearchPage = () => {
                 <Search />
             </section>
             <section className="section section__cities">
-                <List cities={cities} wrapperClass="cities" itemClass="cities-item" />
+                <List
+                    cities={cities}
+                    wrapperClass="cities"
+                    itemClass="cities-item"
+                />
             </section>
         </div>
     );

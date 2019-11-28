@@ -8,11 +8,11 @@ import App from "./js/components/app";
 
 const Idx = () => {
     return (
-        <Router>
-            <Provider store={store}>
+        <Provider store={store}>
+            <Router>
                 <App />
-            </Provider>
-        </Router>
+            </Router>
+        </Provider>
     );
 };
 
