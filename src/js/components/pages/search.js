@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Search from "./../search-field";
 import List from "./../cities-list";
 import Loader from "./../loader";
 import { fetchCitiesRequest } from "Actions/actions";
@@ -10,6 +9,7 @@ const SearchPage = () => {
     useEffect(() => {
         dispatch(fetchCitiesRequest());
     }, []);
+    const [search, setSearch] = useState("");
     const { items: cities, loading, error } = useSelector(
         state => state.cities
     );
@@ -29,14 +29,35 @@ const SearchPage = () => {
             </div>
         );
     }
+
+    const filterCities = cities => {
+        if (!cities) return;
+        return cities.filter(({ name }) =>
+            name.toLowerCase().includes(search.toLowerCase())
+        );
+    };
+
     return (
         <div>
             <section className="section section__search">
-                <Search />
+                <div className="search">
+                    <div className="search__ico">
+                        <span className="icon-search"></span>
+                    </div>
+                    <input
+                        type="text"
+                        className="input input-search"
+                        value={search}
+                        onChange={e => {
+                            setSearch(e.target.value);
+                        }}
+                        placeholder="Search for city"
+                    />
+                </div>
             </section>
             <section className="section section__cities">
                 <List
-                    cities={cities}
+                    cities={filterCities(cities)}
                     wrapperClass="cities"
                     itemClass="cities-item"
                 />
